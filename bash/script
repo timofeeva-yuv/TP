@@ -1,0 +1,6 @@
+#!/bin/sh
+mkdir $1
+find /home -path $1 -prune -o \( -name "*.$2" -o -name "*.$3" \) -exec 2>/dev/null 1>/dev/null cp --backup=numbered {} $1 \; 
+tar -c -f $4 $1 2>/dev/null 1>/dev/null
+echo "done"
+
